@@ -12,11 +12,6 @@ spec:
             operator: In
             values:
             - NVIDIA-A10
-  tolerations:
-  - key: nautilus.io/mahi-tutorial
-    operator: "Equal"
-    value: "true"
-    effect: "NoSchedule"
   volumes:
   - name: scratch
     emptyDir: {}
@@ -26,7 +21,7 @@ spec:
       sizeLimit: 4Gi
   containers:
   - name: mypod
-    image: ghcr.io/huggingface/text-generation-inference:1.4
+    image: ghcr.io/huggingface/text-generation-inference:2.1.1
     resources:
       limits:
         memory: 16Gi
@@ -41,7 +36,7 @@ spec:
     - >-
         cd /scratch;
         export HOME=/scratch;
-        timeout 1h text-generation-launcher --model-id mistralai/Mistral-7B-Instruct-v0.2;
+        timeout 1h text-generation-launcher --model-id HuggingFaceH4/zephyr-7b-beta;
     volumeMounts:
             - name: scratch
               mountPath: /scratch
