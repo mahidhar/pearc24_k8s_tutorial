@@ -82,6 +82,35 @@ rag.invoke("What affects pigeon plumage ?")
 
 ## Helm based deployment of LLM as service (H2O)
 
+Install helm. Details at: <https://github.com/helm/helm#install>. Quickest option mignt be to download and use static binaries from the release page referenced in link above.
+
+We will be using the H20 project (<https://github.com/h2oai>). Clone the H2O repository:
+
+```
+git clone https://github.com/h2oai/h2ogpt.git
+```
+
+Copy the values file to the h2o directory:
+
+```
+cp h2o-values.yaml h2ogpt
+cd h2ogpt
+```
+Install the helm chart. Make sure you use a unique name (change username below):
+
+```
+helm install h2ogpt-username helm/h2ogpt-chart -f h2o-values.yaml
+```
+
+Check the pods (kubectl get pods, maybe grep your username since there will be a lot of pods running) to make sure they are running. Once the pod is running, check the logs and see if h2o is running. Check if the service is running and then port forward to your laptop:
+
+```
+kubectl check service
+kubectl port-forward service/h2ogpt-username-web --address=127.0.0.1 16002:80
+```
+
+You can open localhost:16002 in your browser once the forward works. This will give you the H2O interface for chat, ingesting docs etc.
+
 ## LAMMPS (molecular dynamics code) example
 
 Lets use an existing LAMMPS (a molecular dynamics code) container from dockerhub. 
