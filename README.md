@@ -24,7 +24,7 @@ Kubernetes has emerged as the leading container orchestration solution over the 
     e. LAMMPS (molecular dynamics application) example
 *Storage
   -Storage hands on
-*Monitoring your compute 
+*Monitoring your work 
 *Closeout
 
 ```
