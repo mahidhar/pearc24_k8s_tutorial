@@ -17,9 +17,11 @@ Kubernetes has emerged as the leading container orchestration solution over the 
   -Scheduling Hands On 
 *AI and computational science research applications with Kubernetes 
   -AI and Scientific Research Applications examples with Hands On 
-    a. RAG example using Ollama 
-    b. Helm based deployment of H2O - ingest, inference, RAG 
-    c. LAMMPS application example
+    a. AI training using PyTorch example
+    b. Text generation inference example
+    c. RAG example using Ollama 
+    d. Helm based deployment of LLM as service (H2O) 
+    e. LAMMPS (molecular dynamics application) example
 *Storage
   -Storage hands on
 *Monitoring your compute 
