@@ -49,7 +49,7 @@ from huggingface_hub import InferenceClient
 client = InferenceClient(model="http://0.0.0.0:80")
 or token in client.text_generation("Who made cat videos?", max_new_tokens=24, stream=True): print (token)
 ```
-## RAG using example using Ollama
+## RAG example using Ollama
 
 Start up the pod:
 ```
