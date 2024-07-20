@@ -1,4 +1,4 @@
-# 5NRP Kubernetes Tutorial
+# PEARC24 Kubernetes Tutorial
 
 Storage\
 Hands on session
