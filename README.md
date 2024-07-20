@@ -1,4 +1,4 @@
-# Scientific Computing with Kubernetes
+# AI and Scientific Research Computing with Kubernetes
 
 An upcoming tutorial at PEARC24.
 To be presented by Mahidhar Tatineni and Dmitry Mishin.
@@ -15,7 +15,7 @@ Kubernetes has emerged as the leading container orchestration solution over the 
   -Basic Kubernetes Hands On 
 *Kubernetes resource scheduling 
   -Scheduling Hands On 
-*AI and computational science research applications with Kubernetes 
+*AI and science research applications with Kubernetes 
   -AI and Scientific Research Applications examples with Hands On 
     a. AI training using PyTorch example
     b. Text generation inference example
