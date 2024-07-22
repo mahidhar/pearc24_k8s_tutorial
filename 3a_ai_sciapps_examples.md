@@ -64,7 +64,7 @@ Watch the logs and make sure you wait till the installs are done and the book is
 ```
 kubectl logs ollama-username
 ```
-Once the book is downlaoded (you will see wget output in the logs), we can get interactive access to the pod and start up the Ollama server and pull the module we want to use (Mistral):
+Once the book is downloaded (you will see wget output in the logs), we can get interactive access to the pod and start up the Ollama server and pull the module we want to use (Mistral):
 
 ```
 kubectl exec -it ollama-username -- /bin/bash
@@ -74,7 +74,7 @@ ollama pull mistral
 ```
 We can now download our test script and run it:
 ```
-wget https://raw.githubusercontent.com/mahidhar/5nrp_k8s_tutorial/main/test.py
+wget https://raw.githubusercontent.com/mahidhar/pearc24_k8s_tutorial/main/test.py
 python3 -i test.py
 ```
 Now we can run the rag within the interactive python interpreter. Do the following one by one (i.e. wait for results before moving to the next one)
