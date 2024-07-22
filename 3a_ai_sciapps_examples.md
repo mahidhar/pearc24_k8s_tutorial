@@ -113,7 +113,11 @@ kubectl check service
 kubectl port-forward service/h2ogpt-username-web --address=127.0.0.1 16002:80
 ```
 
-You can open localhost:16002 in your browser once the forward works. This will give you the H2O interface for chat, ingesting docs etc.
+You can open localhost:16002 in your browser once the forward works. This will give you the H2O interface for chat, ingesting docs etc. Once you are done you can release the resources by doing:
+
+```
+helm uninstall h2ogpt-username
+```
 
 ## LAMMPS (molecular dynamics code) example
 
