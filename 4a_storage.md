@@ -199,6 +199,76 @@ Good enough for testing and debugging, but not much else.
 
 Again, we do not have an explict hands-on tutorial, and we discourage the uploading of any sensitive cretentials to this shared kubernetes setup.
 
+
+## Optional: Simple example showing use of config files
+
+Let's start with creating a simple test file and import it into a pod.
+
+Create a local file named `hello.txt` with any content you like.
+
+Let's now import this file into a configmap (replace username, as before):
+```
+kubectl create configmap config1-<username> --from-file=hello.txt
+```
+
+Can you see it?
+```
+kubectl get configmap
+```
+
+You can also look at its content with
+```
+kubectl get configmap -o yaml config1-<username>
+```
+
+Import that file into a pod:
+
+###### c1.yaml:
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: c1-<username>
+spec:
+  containers:
+  - name: mypod
+    image: rockylinux:8
+    resources:
+      limits:
+        memory: 100Mi
+        cpu: 100m
+      requests:
+        memory: 100Mi
+        cpu: 100m
+    command: ["sh", "-c", "sleep 1000"]
+    volumeMounts:
+    - name: hello
+      mountPath: /tmp/hello.txt
+      subPath: hello.txt
+  volumes:
+  - name: hello
+    configMap:
+      name: config1-<username>
+      items:
+      - key: hello.txt
+        path: hello.txt
+```
+
+Create the pod and once it has started, login using kubectl exec and check if the file is indeed in the /tmp directory.
+
+Inside the pod, try making some changes to 
+```
+/tmp/hello.txt
+```
+
+Cound you open the file for writing?
+
+Once you are done exploring, delete the pod and the configmap:
+```
+kubectl delete pod c1-<username>
+kubectl delete configmap config1-<username> 
+```
+
 ## End
 
 **Please make sure you did not leave any running pods. Jobs and associated completed pods are OK.**
