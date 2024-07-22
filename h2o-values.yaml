@@ -11,6 +11,7 @@ h2ogpt:
   overrideConfig:
     base_model: h2oai/h2o-danube2-1.8b-chat
     use_safetensors: True
+    prompt_type: llama2
     save_dir: /workspace/save/
     use_gpu_id: False
     score_model: None
