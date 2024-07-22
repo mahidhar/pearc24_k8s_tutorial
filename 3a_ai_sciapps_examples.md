@@ -5,7 +5,8 @@ Hands on session
 
 ## AI training using PyTorch example
 
-You can use the yaml files from the repo as is but please change the username to something unique as we are all sharing the same namespace. We start by running the training example:
+You can use the yaml files from the repo as is but please change the username to something unique as we are all sharing the same namespace. Please download the yaml files using the download raw file button ![image](https://github.com/user-attachments/assets/89f6e98f-cbbd-4c17-849b-6c5d8a004cc0)
+and edit We start by running the training example:
 
 ```
 kubectl apply -f pytorch-training.yaml
