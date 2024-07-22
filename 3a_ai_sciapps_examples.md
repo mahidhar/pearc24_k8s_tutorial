@@ -5,7 +5,8 @@ Hands on session
 
 ## AI training using PyTorch example
 
-You can use the yaml files from the repo as is but please change the username to something unique as we are all sharing the same namespace. Please download the yaml files using the download raw file button <img src="https://github.com/user-attachments/assets/89f6e98f-cbbd-4c17-849b-6c5d8a004cc0" width="256"/>
+You can use the yaml files from the repo as is but please change the username to something unique as we are all sharing the same namespace. Please download the yaml files using the download raw file button 
+<img src="https://github.com/user-attachments/assets/4033a577-e8d3-4909-9773-30ab39cafef3" width="256"/>
 and edit We start by running the training example:
 
 ```
