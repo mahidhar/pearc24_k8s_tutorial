@@ -202,7 +202,7 @@ Again, we do not have an explict hands-on tutorial, and we discourage the upload
 
 ## Optional: Simple example showing use of config files
 
-Let's start with creating a simple test file and import it into a pod.
+Example creates a simple test file and imports it into a pod.
 
 Create a local file named `hello.txt` with any content you like.
 
