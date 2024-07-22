@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: gp3-username
 spec:
+  restartPolicy: Never
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
