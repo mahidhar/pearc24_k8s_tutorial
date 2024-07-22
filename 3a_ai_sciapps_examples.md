@@ -84,7 +84,9 @@ rag.invoke("Do tame pigeons have better plumage ?")
 rag.invoke("What affects pigeon plumage ?")
 ```
 
-## Helm based deployment of LLM as service (H2O)
+## Helm based deployment of LLM as service (H2O) - DOESN'T WORK!
+
+This is how it's supposed to work: <https://nrp-llama3.nrp-nautilus.io>
 
 Install helm. Details at: <https://github.com/helm/helm#install>. Quickest option mignt be to download and use static binaries from the release page referenced in link above.
 
