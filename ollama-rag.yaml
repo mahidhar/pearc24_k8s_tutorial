@@ -12,11 +12,6 @@ spec:
             operator: In
             values:
             - NVIDIA-A10
-  tolerations:
-  - key: nautilus.io/mahi-tutorial
-    operator: "Equal"
-    value: "true"
-    effect: "NoSchedule"
   volumes:
   - name: scratch
     emptyDir: {}
