@@ -10,9 +10,9 @@ There are several basic step you must take to get access to the cluster.
 1. Install the kubectl Kubernetes client.\
    Instructions at <https://kubernetes.io/docs/tasks/tools/install-kubectl/>\
    If you have homebrew installed on mac, use that. Otherwise try downloading the static binary (the curl way)
-2. Download the configuration file from this github repo and put it as \~/.kube/config .
+2. Download the configuration file (config) from this github repo and put it on your laptop in the location \~/.kube/config .
 
-The config files for this tutorial will have the right namespace pre-set. In general you need to be aware of which namespace you are working in, and either set it with `kubectl config set-context nautilus --namespace=the_namespace` or specify in each `kubectl` command by adding `-n namespace`.
+The config file for this tutorial will have the right namespace pre-set. In general you need to be aware of which namespace you are working in, and either set it with `kubectl config set-context nautilus --namespace=the_namespace` or specify in each `kubectl` command by adding `-n namespace`.
 
 ## GUI tools
 
