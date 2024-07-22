@@ -1,4 +1,4 @@
-# Scientific Computing with Kubernetes Tutorial
+# AI and Scientific Research Computing with Kubernetes Tutorial
 
 **Scheduling in Kubernetes\
 Hands on session**
