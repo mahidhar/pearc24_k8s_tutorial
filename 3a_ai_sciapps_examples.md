@@ -88,6 +88,8 @@ rag.invoke("What affects pigeon plumage ?")
 
 This is how it's supposed to work: <https://nrp-llama3.nrp-nautilus.io>
 
+Use `guest`:`guest` or register a new user
+
 Install helm. Details at: <https://github.com/helm/helm#install>. Quickest option mignt be to download and use static binaries from the release page referenced in link above.
 
 We will be using the H20 project (<https://github.com/h2oai>). Clone the H2O repository:
