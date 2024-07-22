@@ -106,14 +106,35 @@ Install the helm chart. Make sure you use a unique name (change username below):
 helm install h2ogpt-username helm/h2ogpt-chart -f h2o-values.yaml
 ```
 
-Check the pods (kubectl get pods, maybe grep your username since there will be a lot of pods running) to make sure they are running. Once the pod is running, check the logs and see if h2o is running. Check if the service is running and then port forward to your laptop:
+Check the pods (kubectl get pods, maybe grep your username since there will be a lot of pods running) to make sure they are running. Once the pod is running, check the logs and see if h2o is running.
 
-```
-kubectl check service
-kubectl port-forward service/h2ogpt-username-web --address=127.0.0.1 16002:80
+Now you can expose the llm by using an ingress (carefully edit all fields with username):
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: haproxy
+  name: llm-test-username
+spec:
+  rules:
+  - host: llm-test-username.nrp-nautilus.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: h2ogpt-username-web
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - llm-test-username.nrp-nautilus.io
 ```
 
-You can open localhost:16002 in your browser once the forward works. This will give you the H2O interface for chat, ingesting docs etc. Once you are done you can release the resources by doing:
+You can open llm-test-username.nrp-nautilus.io (with username replaced) in your browser once the forward works. This will give you the H2O interface for chat, ingesting docs etc. Once you are done you can release the resources by doing:
 
 ```
 helm uninstall h2ogpt-username
